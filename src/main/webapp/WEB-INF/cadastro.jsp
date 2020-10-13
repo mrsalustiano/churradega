@@ -59,31 +59,53 @@
             </div>
         </nav>
     </header>
-    <main>
+      <main>
 
-        <div class="jumbotron jumbotron-fluid">
-            <div class="container mb-2">
-                <div class="row">
-                    <div class="col-sm-3"></div>
-                    <div class="col-lg">
-
-                        <h1 class="display-8">Cálculo on-line de Churrasco</h1>
-
-                    </div>
-                    <div class="col-sm-3"></div>
-
-                </div>
-
-            </div>
-        </div>
         <div class="container">
-            <h2>Bem vindo ao site de calculo para Churrasco</h2>
+            <h2>Cadastro de Clientes </h2>
+            <img src="images/cadCliente.png" width="150" height="150">
         </div>
-
-
+        <hr>
+        <div class="container">
+            <form>
+                <div class="form-row">
+                    <div class="form-group col-md-8">
+                        <label for="inputNome">Nome</label>
+                        <input type="text" class="form-control" id="inputNome" placeholder="Digite o nome">
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="inputCPF">CPF</label>
+                        <input type="text" class="form-control" maxlength="14" id="inputCPF" placeholder="Digite o CPF">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-4">
+                        <label for="inputDTNasc">Data de Nascimento</label>
+                        <input type="date" class="form-control" id="inputDTNasc">
+                    </div>
+                    <div class="form-group col-md-8">
+                        <label for="inputEmail">Email</label>
+                        <input type="email" class="form-control" id="inputEmail" placeholder="Digite o email">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="inputPasswd1">Senha </label>
+                        <input type="password" class="form-control" id="inputPasswd1" placeholder="Digite a senha">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="inputPasswd2">Repita a Senha </label>
+                        <input type="password" class="form-control" id="inputPasswd2" placeholder="Repita a senha">
+                    </div>
+                </div>
+                <div class="d-flex justify-content-center">
+                    <button type="submit" class="btn btn-primary">Cadastrar</button> &nbsp;&nbsp;
+                    <button type="reset" class="btn btn-danger">Cancelar</button>
+                </div>
+            </form>
+        </div>
     </main>
-
-
+    
     <footer class="footer">
         <div class="container">
             <span class="text-muted">Churradega - 2020 - Desenvolvido por: <strong>Marcelo / Alana / Rodrigo</strong></span>

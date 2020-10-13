@@ -9,21 +9,28 @@ public class IndexController {
 	
 	@RequestMapping("/")
 	public String IndexPagina() {
-		
 		return "index";
+
+	}
+	
+	@RequestMapping("/cadastro")
+	public String CadastroPagina() {
+		return "cadastro";
+
+	}
+	
+	@RequestMapping("/calculo")
+	public String calculoPagina() {
+		return "calculo";
 
 	}
 	
 	
 	
-	@RequestMapping("cabecalhoPrincipal")
-	public String CabecalhoPrincipal() {
-		return "fragments/cabecalho";
-	}
 	
-	@RequestMapping("footerPrincipal")
-	public String FooterPrinicpal() {
-		return "fragments/footer";
-	}
+		
+	
+	
+	
 
 }

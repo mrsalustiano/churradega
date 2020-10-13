@@ -4,9 +4,6 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <spring:url value="/" var="home"></spring:url>
-<spring:url value="/cadastro" var="cadastro"></spring:url>
-<spring:url value="/calculo" var="calculo"></spring:url>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -42,46 +39,69 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarText">
                 <ul class="navbar-nav mr-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="${home}"><i class="fas fa-home"></i>&nbsp;Home <span class="sr-only">(current)</span></a>
-                    </li>
                     <li class="nav-item active">
-                        <a class="nav-link" href="${cadastro }"><i class="fas fa-user-cog"></i> Cadastro</a>
+                        <a class="nav-link" href="/"><i class="fas fa-home"></i>&nbsp;Home </a>
                     </li>
-                    <li class="nav-item active">
-                        <a class="nav-link" href="${calculo}"><i class="fas fa-calculator"></i>&nbsp;Cálculo</a>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Produtos</a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="#">Cadastrar</a>
+                            <a class="dropdown-item" href="#">Editar</a>
+                            <a class="dropdown-item" href="#">Listar</a>
+                        </div>
                     </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Clientes</a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="#">Editar</a>
+                            <a class="dropdown-item" href="#">Listar</a>
+
+                        </div>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Pedidos</a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="#">Listar</a>
+                            <a class="dropdown-item" href="#">Editar</a>
+                        </div>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Usuários</a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="#">Cadastrar</a>
+                            <a class="dropdown-item" href="#">Editar</a>
+                            <a class="dropdown-item" href="#">Listar</a>
+                        </div>
+                    </li>
+
                 </ul>
                 <i class="fas fa-user-shield"></i>
                 <span class="navbar-text">
-               <a class="nav-link" href="/admin"> Área Adminstrativa </a>
+               <a class="nav-link" href="#"> Área Adminstrativa </a>
               </span>
             </div>
         </nav>
     </header>
     <main>
 
-        <div class="jumbotron jumbotron-fluid">
-            <div class="container mb-2">
-                <div class="row">
-                    <div class="col-sm-3"></div>
-                    <div class="col-lg">
+        <div class="container">
 
-                        <h1 class="display-8">Cálculo on-line de Churrasco</h1>
+            <h2>Área Restrita</h2>
 
-                    </div>
-                    <div class="col-sm-3"></div>
-
-                </div>
-
+        </div>
+        <hr>
+        <div class="container">
+            <br><br><br><br><br><br><br><br>
+            <div class="d-flex justify-content-center">
+                <img src="/images/restrita.jpg">
             </div>
         </div>
-        <div class="container">
-            <h2>Bem vindo ao site de calculo para Churrasco</h2>
-        </div>
-
-
     </main>
+
 
 
     <footer class="footer">
