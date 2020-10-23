@@ -27,7 +27,7 @@
 	src='<spring:url value="https://kit.fontawesome.com/166f435d2b.js" />'></script>
 <style>
 body {
-	background-image: url("images/fundo.png");
+	background-image: url("../images/fundo.png");
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center center;
