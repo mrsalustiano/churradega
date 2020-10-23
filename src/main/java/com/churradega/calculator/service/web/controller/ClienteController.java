@@ -53,17 +53,21 @@ public class ClienteController {
 
 		Long valor = clientes.getId();
 
-		if(!(Validations.ValidaIdade(clientes.getDataNascimento()))) {
+		if (clientes.getDataNascimento() != null) {
+			if (!(Validations.ValidaIdade(clientes.getDataNascimento()))) {
+				attr.addFlashAttribute("mensagemErro", "ERRO GRAVE: A idade tem que ser maior que 18 anos completos");
+				return "redirect:/clientes/cadastrar";
+
+			}
+		} else {
 			attr.addFlashAttribute("mensagemErro", "ERRO GRAVE: A idade tem que ser maior que 18 anos completos");
 			return "redirect:/clientes/cadastrar";
-			
 		}
-		
-		
-		if (!(Validations.ValidaCPF((clientes.getCpf())))) {			
+
+		if (!(Validations.ValidaCPF((clientes.getCpf())))) {
 			attr.addFlashAttribute("mensagemErro", "ERRO GRAVE: CPF Inválido");
 			return "redirect:/clientes/cadastrar";
-			
+
 		}
 
 		if (!(Validations.isValidEmailAddress(clientes.getEmail()))) {
