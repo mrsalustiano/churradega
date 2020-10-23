@@ -60,7 +60,7 @@ public class ClienteController {
 
 			}
 		} else {
-			attr.addFlashAttribute("mensagemErro", "ERRO GRAVE: A idade tem que ser maior que 18 anos completos");
+			attr.addFlashAttribute("mensagemErro", "ERRO GRAVE: A idade não pode ser nula");
 			return "redirect:/clientes/cadastrar";
 		}
 
