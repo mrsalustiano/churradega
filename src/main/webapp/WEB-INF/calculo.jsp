@@ -4,7 +4,7 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <spring:url value="/" var="home"></spring:url>
-<spring:url value="/cadastro" var="cadastro"></spring:url>
+<spring:url value="/clientes/cadastrar" var="cadastro"></spring:url>
 <spring:url value="/calculo" var="calculo"></spring:url>
 
 <!DOCTYPE html>

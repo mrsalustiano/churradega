@@ -15,7 +15,7 @@ public class IndexController {
 	
 	@RequestMapping("/cadastro")
 	public String CadastroPagina() {
-		return "cadastro";
+		return "/cliente/cadastro";
 
 	}
 	

@@ -5,6 +5,7 @@ import java.time.LocalDate;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.format.annotation.DateTimeFormat.ISO;
@@ -33,6 +34,11 @@ public class Cliente extends AbstractEntity<Long> {
 	@Column(name = "senhaCliente", nullable = false, length = 200)
 	private String senhaCliente;
 
+	
+	@Transient
+	@Column(name = "senhaCliente2", nullable = false, length = 200)
+	private String senhaCliente2;
+	
 	public LocalDate getDataNascimento() {
 		return dataNascimento;
 	}
@@ -72,11 +78,21 @@ public class Cliente extends AbstractEntity<Long> {
 	public void setSenhaCliente(String senhaCliente) {
 		this.senhaCliente = senhaCliente;
 	}
+	
+	
+
+	public String getSenhaCliente2() {
+		return senhaCliente2;
+	}
+
+	public void setSenhaCliente2(String senhaCliente2) {
+		this.senhaCliente2 = senhaCliente2;
+	}
 
 	@Override
 	public String toString() {
 		return "Cliente [dataNascimento=" + dataNascimento + ", cpf=" + cpf + ", email=" + email + ", nome=" + nome
-				+ ", senhaCliente=" + senhaCliente + "]";
+				+ ", senhaCliente=" + senhaCliente + ", senhaCliente2=" + senhaCliente2 + "]";
 	}
 	
 	

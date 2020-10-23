@@ -14,6 +14,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Churradega - Calculadora de Churrasco</title>
+<spring:url value="/clientes/salva" var="salva"></spring:url>
 
 <link
 	href='<spring:url value="https://use.fontawesome.com/releases/v5.7.0/css/all.css" />'
@@ -35,11 +36,6 @@ body {
 
 h2 {
 	text-align: center;
-}
-
-h5 {
-	font-style: normal;
-	font-weight: normal;
 }
 </style>
 
@@ -71,43 +67,76 @@ h5 {
 </header>
 <main>
 
-	<div class="jumbotron jumbotron-fluid">
-		<div class="container mb-2">
-			<div class="row">
-				<div class="col-sm-3"></div>
-				<div class="col-lg">
+	<div class="container">
+		<h2>Cadastro de Clientes</h2>
+		<img src="../images/cadCliente.png" width="150" height="150">
+	</div>
+	<hr>
+	<div class="container">
+		<form:form action="${salva}" method="POST" modelAttribute="cliente"  >
 
-					<h1 class="display-8">Cálculo on-line de Churrasco</h1>
 
+			<div class="form-row">
+				<div class="col-12">
+					<c:if test="${not empty mensagemErro }">
+						<div id="divMensagemErro" class="alert alert-danger" role="alert">${mensagemErro}</div>
+					</c:if>
+
+					<c:if test="${not empty mensagemSucesso }">
+						<div id="divMensagemSucesso" class="alert alert-success"
+							role="alert">${mensagemSucesso}</div>
+					</c:if>
 				</div>
-				<div class="col-sm-3"></div>
-
 			</div>
 
-		</div>
-	</div>
-	<div class="container mb-6">
-		<h2>Bem vindo ao site de calculo para Churrasco</h2>
-	</div>
-	<br> <br>
-
-	<div class="container mb-6">
-
-		<div class="row mx-auto">
-	
-				<h5>Aqui voce calcula seu churrasco de forma simples e rapida,
-					nosso algoritmo foi criado pensando em voce que deseja praticidade
-					e economia nos seus gastos. Ao realizar nosso calculo será exibido
-					tudo que você ira precisar para que seu churrasco seja realizado
-					com sucesso.</h5>
+			<div class="form-row">
+				<div class="form-group col-md-8">
+					<label for="inputNome">Nome</label> 
+					 <form:input type="text" path="nome"
+									class="form-control" id="inputNome" placeholder="Nome"/>
+									
 					
-					<small class="text-muted"><a href="${calculo}"
-									class="btn btn-primary btn-sm">Calcular</a>
-									</small>
-		</div>
+				</div>
+				<div class="form-group col-md-4">
+					<label for="inputCPF">CPF</label> 
+					<form:input type="text"
+									class="form-control" id="cpf"
+									onkeypress="$(this).mask('000.000.000-00')" placeholder="CPF" path="cpf"/>
+									
+					
+				</div>
+			</div>
+			<div class="form-row">
+				<div class="form-group col-md-4">
+					<label for="inputDTNasc">Data de Nascimento</label> 
+					<form:input
+						type="date" path="dataNascimento" class="form-control" id="inputDTNasc" />
+				</div>
+				<div class="form-group col-md-8">
+					<label for="inputEmail">Email</label> <form:input type="email" path="email"
+ 						class="form-control" id="inputEmail" placeholder="Digite o email" />
+				</div>
+			</div>
+			<div class="form-row">
+				<div class="form-group col-md-6">
+					<label for="inputPasswd1">Senha </label> <form:input type="password" path="senhaCliente"
+						class="form-control" id="inputPasswd1"
+						placeholder="Digite a senha" />
+				</div>
+				<div class="form-group col-md-6">
+					<label for="inputPasswd2">Repita a Senha </label> <form:input
+						type="password" class="form-control" id="inputPasswd2" path="senhaCliente2"
+						placeholder="Repita a senha" />
+				</div>
+			</div>
+			<div class="d-flex justify-content-center">
+				<button type="submit" class="btn btn-primary">Cadastrar</button>
+				&nbsp;&nbsp;
+				<button type="reset" class="btn btn-danger">Cancelar</button>
+			</div>
+		</form:form>
 	</div>
 </main>
-
 
 <footer class="footer">
 	<div class="container">
