@@ -67,7 +67,7 @@
                     <div class="card" style="width: 14rem;">
                         <img src="images/avt-homem.jpg" class="card-img-top" alt="homens">
                         <div class="card-body">
-                            <h5 class="card-title">Homems</h5>
+                            <h5 class="card-title">Homens</h5>
                             <p class="card-text">
                                 <div class="form-group">
                                     <div class="form-check">
