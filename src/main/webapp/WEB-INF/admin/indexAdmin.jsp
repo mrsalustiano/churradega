@@ -4,6 +4,8 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <spring:url value="/" var="home"></spring:url>
+<spring:url value="/admin/produto/cadastrar" var="produtos"></spring:url>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -46,7 +48,7 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Produtos</a>
                         <div class="dropdown-menu">
-                            <a class="dropdown-item" href="#">Cadastrar</a>
+                            <a class="dropdown-item" href="${produtos}">Cadastrar</a>
                             <a class="dropdown-item" href="#">Editar</a>
                             <a class="dropdown-item" href="#">Listar</a>
                         </div>
