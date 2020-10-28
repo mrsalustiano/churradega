@@ -1,11 +1,11 @@
-package com.churradega.calculator.dao;
+package com.churradega.calculator.service;
 
 import java.util.List;
 
 import com.churradega.calculator.domain.Usuario;
 
-public interface UsuarioDao {
-
+public interface UsuarioService {
+	
 	void save(Usuario usuario);
 
 	void update(Usuario usuario);
@@ -20,5 +20,8 @@ public interface UsuarioDao {
 
 	List<Usuario> findByPerfil(String perfil);
 	
-	List<Usuario> findByLoginAndSenha(String login, String password);
+	List<Usuario> findByEmailAndSenha(String email, String password);
+	
+
+
 }

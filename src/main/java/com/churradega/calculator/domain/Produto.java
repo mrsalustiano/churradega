@@ -14,6 +14,8 @@ import javax.persistence.Transient;
 @Table(name = "produto")
 public class Produto extends AbstractEntity<Long>{
 
+	@Column(nullable = false, length = 50)
+	private String nome;
 	
 	@Column(nullable = true, length = 10000)
 	private String descricao;
@@ -32,6 +34,16 @@ public class Produto extends AbstractEntity<Long>{
 	
 	@Transient //esse campo não será persistido no hibernate
 	private String imagemEncoded;
+
+	
+	
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
 
 	public String getDescricao() {
 		return descricao;
@@ -73,10 +85,11 @@ public class Produto extends AbstractEntity<Long>{
 		this.imagemEncoded = imagemEncoded;
 	}
 
+	
 	@Override
 	public String toString() {
-		return "Produto [descricao=" + descricao + ", valor=" + valor + ", categoria=" + categoria + ", imagemProduto="
-				+ Arrays.toString(imagemProduto) + ", imagemEncoded=" + imagemEncoded + "]";
+		return "Produto [nome=" + nome + ", descricao=" + descricao + ", valor=" + valor + ", categoria=" + categoria
+				+ ", imagemProduto=" + Arrays.toString(imagemProduto) + ", imagemEncoded=" + imagemEncoded + "]";
 	}
 	
 	

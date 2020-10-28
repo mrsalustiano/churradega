@@ -5,7 +5,9 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <spring:url value="/" var="home"></spring:url>
 <spring:url value="/admin/produto/cadastrar" var="produtos"></spring:url>
-
+<spring:url value="/admin/usuarios/cadastrar" var="usuarios"></spring:url>
+<spring:url value="/admin/usuarios/listar" var="listaUser"></spring:url>
+<spring:url value="/clientes/listar" var="listaCli"></spring:url>
 <!DOCTYPE html>
 <html>
 <head>
@@ -57,8 +59,8 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Clientes</a>
                         <div class="dropdown-menu">
-                            <a class="dropdown-item" href="#">Editar</a>
-                            <a class="dropdown-item" href="#">Listar</a>
+                            
+                            <a class="dropdown-item" href="${listaCli }">Listar</a>
 
                         </div>
                     </li>
@@ -74,9 +76,9 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Usuários</a>
                         <div class="dropdown-menu">
-                            <a class="dropdown-item" href="#">Cadastrar</a>
+                            <a class="dropdown-item" href="${usuarios }">Cadastrar</a>
                             <a class="dropdown-item" href="#">Editar</a>
-                            <a class="dropdown-item" href="#">Listar</a>
+                            <a class="dropdown-item" href="${listaUser}">Listar</a>
                         </div>
                     </li>
 

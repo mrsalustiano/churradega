@@ -29,14 +29,14 @@ public class ClienteController {
 	public String cadastrarL(Cliente cliente, ModelMap model) {
 		model.addAttribute("clientes", service.findAll());
 
-		return "cliente/cadastro";
+		return "cliente/cadCli";
 	}
 
 	@GetMapping("/cadastrar")
 	public String cadastrar(Cliente cliente, ModelMap model) {
 		model.addAttribute("clientes", service.findAll());
 
-		return "cliente/cadastro";
+		return "cliente/cadCli";
 	}
 
 	@GetMapping("/listar")
@@ -44,7 +44,7 @@ public class ClienteController {
 
 		model.addAttribute("clientes", service.findAll());
 
-		return "cliente/listar";
+		return "cliente/listarCliente";
 	}
 
 	@Transactional
@@ -95,7 +95,7 @@ public class ClienteController {
 	public String editar(@Validated Cliente cliente, BindingResult result) {
 
 		if (result.hasErrors()) {
-			return "cliente/cadastro";
+			return "cliente/cadCli";
 		}
 
 		service.update(cliente);
@@ -125,7 +125,7 @@ public class ClienteController {
 			attr.addFlashAttribute("mensagemErro", "ERRO GRAVE: " + e.getMessage());
 
 		}
-		return "cliente/cadastro";
+		return "cliente/cadCli";
 
 	}
 

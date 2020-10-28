@@ -73,8 +73,8 @@ h2 {
 	</div>
 	<hr>
 	<div class="container">
-		<form:form action="${salva}" method="POST" modelAttribute="cliente"  >
-
+		<form:form action="${salva}" method="POST" modelAttribute="cliente">
+			<form:hidden path="id" />
 
 			<div class="form-row">
 				<div class="col-12">
@@ -91,42 +91,44 @@ h2 {
 
 			<div class="form-row">
 				<div class="form-group col-md-8">
-					<label for="inputNome">Nome</label> 
-					 <form:input type="text" path="nome"
-									class="form-control" id="inputNome" placeholder="Nome"/>
-									
-					
+					<label for="inputNome">Nome</label>
+					<form:input type="text" path="nome" class="form-control"
+						id="inputNome" placeholder="Nome" />
+
+
 				</div>
 				<div class="form-group col-md-4">
-					<label for="inputCPF">CPF</label> 
-					<form:input type="text"
-									class="form-control" id="cpf"
-									onkeypress="$(this).mask('000.000.000-00')" placeholder="CPF" path="cpf"/>
-									
-					
+					<label for="inputCPF">CPF</label>
+					<form:input type="text" class="form-control" id="cpf"
+						onkeypress="$(this).mask('000.000.000-00')" placeholder="CPF"
+						path="cpf" />
+
+
 				</div>
 			</div>
 			<div class="form-row">
 				<div class="form-group col-md-4">
-					<label for="inputDTNasc">Data de Nascimento</label> 
-					<form:input
-						type="date" path="dataNascimento" class="form-control" id="inputDTNasc" />
+					<label for="inputDTNasc">Data de Nascimento</label>
+					<form:input type="date" path="dataNascimento" class="form-control"
+						id="inputDTNasc" />
 				</div>
 				<div class="form-group col-md-8">
-					<label for="inputEmail">Email</label> <form:input type="email" path="email"
- 						class="form-control" id="inputEmail" placeholder="Digite o email" />
+					<label for="inputEmail">Email</label>
+					<form:input type="email" path="email" class="form-control"
+						id="inputEmail" placeholder="Digite o email" />
 				</div>
 			</div>
 			<div class="form-row">
 				<div class="form-group col-md-6">
-					<label for="inputPasswd1">Senha </label> <form:input type="password" path="senhaCliente"
+					<label for="inputPasswd1">Senha </label>
+					<form:input type="password" path="senhaCliente"
 						class="form-control" id="inputPasswd1"
 						placeholder="Digite a senha" />
 				</div>
 				<div class="form-group col-md-6">
-					<label for="inputPasswd2">Repita a Senha </label> <form:input
-						type="password" class="form-control" id="inputPasswd2" path="senhaCliente2"
-						placeholder="Repita a senha" />
+					<label for="inputPasswd2">Repita a Senha </label>
+					<form:input type="password" class="form-control" id="inputPasswd2"
+						path="senhaCliente2" placeholder="Repita a senha" />
 				</div>
 			</div>
 			<div class="d-flex justify-content-center">

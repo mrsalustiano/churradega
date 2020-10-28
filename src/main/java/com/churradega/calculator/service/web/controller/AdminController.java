@@ -4,68 +4,61 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
+@RequestMapping("/admin")
 public class AdminController {
+
 	
-	@RequestMapping("admin/")
+	@RequestMapping("/")
 	public String IndexPaginaAdmin() {
 		return "admin/indexAdmin";
 	}
 	
-	@RequestMapping("admin")
+	@RequestMapping("")
 	public String IndexPaginaAdminSemBarra() {
 		return "admin/indexAdmin";
 	}
+	
+	//b produto
 
-	@RequestMapping("admin/produto/cadastrar")
+	@RequestMapping("produto/cadastrar")
 	public String ProdutoCadastro() {
-		return "admin/produto/cadastro";
+		return "admin/produto/cadProd";
 	}
 
-	@RequestMapping("admin/produto/editar")
+	@RequestMapping("produto/editar")
 	public String ProdutoEditar() {
-		return "admin/produto/editar";
+		return "admin/produto/cadEdit";
 	}
 
-	@RequestMapping("admin/produto/listar")
+	@RequestMapping("produto/listar")
 	public String ProdutoListar() {
-		return "admin/produto/lista";
+		return "admin/produto/cadLista";
 	}
 
-	@RequestMapping("admin/cliente/editar")
+	//cliente 
+	@RequestMapping("cliente/editar")
 	public String ClienteEditar() {
-		return "admin/cliente/editar";
+		return "admin/cliente/cadEdit";
 	}
 	
-	@RequestMapping("admin/cliente/listar")
+	@RequestMapping("cliente/listar")
 	public String ClienteListar() {
 		return "admin/cliente/lista";
 	}
+	
+	// pedido
 
-	@RequestMapping("admin/pedido/listar")
+	@RequestMapping("pedido/listar")
 	public String PedidoListar() {
 		return "admin/pedido/lista";
 	}
 
-	@RequestMapping("admin/pedido/editar")
+	@RequestMapping("pedido/editar")
 	public String PedidoEditar() {
 		return "admin/pedido/lista";
 	}
 
 
-	@RequestMapping("admin/usuario/cadastrar")
-	public String UsuarioCadastro() {
-		return "admin/usuario/cadastro";
-	}
-
-	@RequestMapping("admin/usuario/editar")
-	public String UsuarioEditar() {
-		return "admin/usuario/editar";
-	}
-
-	@RequestMapping("admin/usuario/listar")
-	public String UsuarioListar() {
-		return "admin/usuario/lista";
-	}
 
 	
 }

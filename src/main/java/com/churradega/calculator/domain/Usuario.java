@@ -5,6 +5,7 @@ import java.time.LocalDate;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.format.annotation.DateTimeFormat.ISO;
@@ -24,6 +25,10 @@ public class Usuario extends AbstractEntity<Long>{
 	
 	@Column(nullable = false, length = 100)
 	private String senha;
+
+	@Transient
+	@Column(nullable = false, length = 100)
+	private String senhaValidacao;
 	
 	@Column(nullable = false, length = 100)
 	private Boolean ativo;
@@ -82,11 +87,21 @@ public class Usuario extends AbstractEntity<Long>{
 	public void setPerfil(String perfil) {
 		this.perfil = perfil;
 	}
+	
+	
+
+	public String getSenhaValidacao() {
+		return senhaValidacao;
+	}
+
+	public void setSenhaValidacao(String senhaValidacao) {
+		this.senhaValidacao = senhaValidacao;
+	}
 
 	@Override
 	public String toString() {
-		return "Usuario [nome=" + nome + ", login=" + login + ", senha=" + senha + ", ativo=" + ativo
-				+ ", dataCadastro=" + dataCadastro + ", perfil=" + perfil + "]";
+		return "Usuario [nome=" + nome + ", login=" + login + ", senha=" + senha + ", senhaValidacao=" + senhaValidacao
+				+ ", ativo=" + ativo + ", dataCadastro=" + dataCadastro + ", perfil=" + perfil + "]";
 	}	
 	
 	
