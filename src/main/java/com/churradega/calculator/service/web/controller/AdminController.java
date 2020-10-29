@@ -59,6 +59,8 @@ public class AdminController {
 	}
 
 
-
-	
+	@RequestMapping("menuAdmin")
+	public String CabecalhoPrincipal() {
+		return "fragments/menuAdmin";
+	}
 }

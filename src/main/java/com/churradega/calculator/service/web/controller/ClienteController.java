@@ -129,4 +129,9 @@ public class ClienteController {
 
 	}
 
+	@RequestMapping("menu")
+	public String CabecalhoPrincipal() {
+		return "fragments/menu";
+		
+	}
 }

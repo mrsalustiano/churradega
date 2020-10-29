@@ -28,8 +28,11 @@ public class IndexController {
 	
 	
 	
+	@RequestMapping("menu")
+	public String CabecalhoPrincipal() {
+		return "fragments/menu";
 		
-	
+	}
 	
 	
 

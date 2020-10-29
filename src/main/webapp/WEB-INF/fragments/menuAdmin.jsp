@@ -1,13 +1,22 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<spring:url value="/" var="home"></spring:url>
+<spring:url value="/admin/produto/cadastrar" var="produtos"></spring:url>
+<spring:url value="/admin/produto/listar" var="listarProduto"></spring:url>
+<spring:url value="/clientes/listar" var="listarCliente"></spring:url>
+<spring:url value="/admin/pedido/listar" var="listarPedido"></spring:url>
+<spring:url value="/admin/usuarios/cadastrar" var="usuariosCadastro"></spring:url>
+<spring:url value="/admin/usuarios/listar" var="listarUsuario"></spring:url>
+<spring:url value="/admin/" var="adminArea"></spring:url>
+
+
+
 <!DOCTYPE html>
-<html>
-<head>
-<meta charset="ISO-8859-1">
-<title>Insert title here</title>
-</head>
 <body>
-    <header>
+
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <a class="navbar-brand" href="#">Churradega</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
@@ -23,16 +32,14 @@
                         <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Produtos</a>
                         <div class="dropdown-menu">
                             <a class="dropdown-item" href="${produtos}">Cadastrar</a>
-                            <a class="dropdown-item" href="#">Editar</a>
-                            <a class="dropdown-item" href="#">Listar</a>
+                            <a class="dropdown-item" href="${listarProduto }">Listar</a>
                         </div>
                     </li>
 
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Clientes</a>
                         <div class="dropdown-menu">
-                            <a class="dropdown-item" href="#">Editar</a>
-                            <a class="dropdown-item" href="#">Listar</a>
+                            <a class="dropdown-item" href="${listarCliente}">Listar</a>
 
                         </div>
                     </li>
@@ -40,27 +47,24 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Pedidos</a>
                         <div class="dropdown-menu">
-                            <a class="dropdown-item" href="#">Listar</a>
-                            <a class="dropdown-item" href="#">Editar</a>
+                            <a class="dropdown-item" href="${listarPedido }">Listar</a>
                         </div>
                     </li>
 
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Usuários</a>
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">UsuÃ¡rios</a>
                         <div class="dropdown-menu">
-                            <a class="dropdown-item" href="${usuarios }">Cadastrar</a>
-                            <a class="dropdown-item" href="#">Editar</a>
-                            <a class="dropdown-item" href="#">Listar</a>
+                            <a class="dropdown-item" href="${usuariosCadastro }">Cadastrar</a>
+                            <a class="dropdown-item" href="${listarUsuario }">Listar</a>
                         </div>
                     </li>
 
                 </ul>
                 <i class="fas fa-user-shield"></i>
                 <span class="navbar-text">
-               <a class="nav-link" href="#"> Área Adminstrativa </a>
+               <a class="nav-link" href="${adminArea}"> Ãrea Adminstrativa </a>
               </span>
             </div>
         </nav>
-        </header>
+ 
 </body>
-</html>
