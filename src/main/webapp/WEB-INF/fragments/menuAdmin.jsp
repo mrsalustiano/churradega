@@ -4,8 +4,8 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <spring:url value="/" var="home"></spring:url>
-<spring:url value="/admin/produto/cadastrar" var="produtos"></spring:url>
-<spring:url value="/admin/produto/listar" var="listarProduto"></spring:url>
+<spring:url value="/admin/produtos/cadastrar" var="produtos"></spring:url>
+<spring:url value="/admin/produtos/listar" var="listarProduto"></spring:url>
 <spring:url value="/clientes/listar" var="listarCliente"></spring:url>
 <spring:url value="/admin/pedido/listar" var="listarPedido"></spring:url>
 <spring:url value="/admin/usuarios/cadastrar" var="usuariosCadastro"></spring:url>

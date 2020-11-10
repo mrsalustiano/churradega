@@ -1,11 +1,11 @@
-package com.churradega.calculator.dao;
+package com.churradega.calculator.service;
 
 import java.util.List;
 
 import com.churradega.calculator.domain.Produto;
 
-public interface ProdutoDao {
-
+public interface ProdutoService {
+	
 	public void save(Produto produto);
 	
 	public void update(Produto produto);
@@ -19,4 +19,11 @@ public interface ProdutoDao {
 	List<Produto> findByCategoria(String categoria);
 	
 	List<Produto> findByNome(String nome);
+	
+	
+	
+	
+	
+	
+
 }

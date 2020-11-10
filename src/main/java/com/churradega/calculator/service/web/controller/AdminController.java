@@ -18,22 +18,7 @@ public class AdminController {
 		return "admin/indexAdmin";
 	}
 	
-	//b produto
-
-	@RequestMapping("produto/cadastrar")
-	public String ProdutoCadastro() {
-		return "admin/produto/cadProd";
-	}
-
-	@RequestMapping("produto/editar")
-	public String ProdutoEditar() {
-		return "admin/produto/cadEdit";
-	}
-
-	@RequestMapping("produto/listar")
-	public String ProdutoListar() {
-		return "admin/produto/cadLista";
-	}
+	
 
 	//cliente 
 	@RequestMapping("cliente/editar")
