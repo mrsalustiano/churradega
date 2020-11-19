@@ -27,10 +27,7 @@ public class Pedido extends AbstractEntity<Long>{
 	@Column(nullable = false, scale = 2)
 	private BigDecimal valor = new BigDecimal(0);
 	
-	
-	@ManyToOne(fetch = FetchType.EAGER)
-	@JoinColumn(name = "cliente_id")
-	Cliente Cliente;
+
 	
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "produto_id")
@@ -60,13 +57,7 @@ public class Pedido extends AbstractEntity<Long>{
 		this.valor = valor;
 	}
 
-	public Cliente getCliente() {
-		return Cliente;
-	}
 
-	public void setCliente(Cliente cliente) {
-		Cliente = cliente;
-	}
 
 	public Produto getProduto() {
 		return produto;
@@ -78,8 +69,7 @@ public class Pedido extends AbstractEntity<Long>{
 
 	@Override
 	public String toString() {
-		return "Pedido [dataPedido=" + dataPedido + ", quantidade=" + quantidade + ", valor=" + valor + ", Cliente="
-				+ Cliente + ", produto=" + produto + "]";
+		return "Pedido [dataPedido=" + dataPedido + ", quantidade=" + quantidade + ", valor=" + valor + ", produto=" + produto + "]";
 	}
 	
 	

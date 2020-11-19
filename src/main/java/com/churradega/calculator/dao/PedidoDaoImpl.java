@@ -15,17 +15,7 @@ public class PedidoDaoImpl extends AbstractDao<Pedido, Long> implements PedidoDa
 		return null;
 	}
 
-	@Override
-	public Pedido findByCliente(Cliente cliente) {
-		// TODO Auto-generated method stub
-		return null;
-	}
 
-	@Override
-	public List<Pedido> findByDataPedido(LocalDate data) {
-		// TODO Auto-generated method stub
-		return null;
-	}
 
 	
 	

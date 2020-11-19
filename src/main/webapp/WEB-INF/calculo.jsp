@@ -12,6 +12,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Churradega - Calculadora de Churrasco</title>
+<spring:url value="/calculo/calcular" var="calcular"></spring:url>
 
 <link href='<spring:url value="https://use.fontawesome.com/releases/v5.7.0/css/all.css" />' rel="stylesheet" />
 <link href='<spring:url value="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"/>' rel="stylesheet" />
@@ -38,7 +39,7 @@
     <main>
            <div class="container">
             <h2>Coloque abaixo as quantidades de pessoas</h2>
-            <form>
+           <form:form action="${calcular}" method="POST" modelAttribute="calculoDTO">
                 <div class="card-deck">
                     <div class="card" style="width: 14rem;">
                         <img src="images/avt-homem.jpg" class="card-img-top" alt="homens">
@@ -112,7 +113,7 @@
                     <button type="reset" class="btn btn-danger">Cancelar</button>
 
                 </div>
-            </form>
+            </form:form>
         </div>
     
     

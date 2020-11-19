@@ -19,11 +19,7 @@ public class IndexController {
 
 	}
 	
-	@RequestMapping("/calculo")
-	public String calculoPagina() {
-		return "calculo";
 
-	}
 	
 	
 	

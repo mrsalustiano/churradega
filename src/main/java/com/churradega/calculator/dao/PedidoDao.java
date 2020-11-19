@@ -21,9 +21,6 @@ public interface PedidoDao {
     List<Pedido> findAll();
     
     Pedido findByProduto(Produto produto);
-    
-    Pedido findByCliente(Cliente cliente);
-    
-    List<Pedido> findByDataPedido(LocalDate data);
+
 
 }
