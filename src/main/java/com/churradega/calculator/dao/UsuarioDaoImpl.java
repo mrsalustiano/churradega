@@ -11,17 +11,17 @@ public class UsuarioDaoImpl extends AbstractDao<Usuario, Long> implements Usuari
 
 	@Override
 	public List<Usuario> findByLogin(String login) {
-		return  createQuery("select u from Usuario where u.login = ?1", login);
+		return  createQuery("select u from Usuario u where u.login = ?1", login);
 	}
 
 	@Override
 	public List<Usuario> findByPerfil(String perfil) {
-		return createQuery("select u from Usuario where u.perfil = ?1", perfil);
+		return createQuery("select u from Usuario u where u.perfil = ?1", perfil);
 	}
 
 	@Override
 	public List<Usuario> findByLoginAndSenha(String login, String password) {		
-		return createQuery("select u from Usuario where u.login = ?1 and u.senha = ?2", login, password);
+		return createQuery("select u from Usuario u where u.login = ?1 and u.senha = ?2", login, password);
 	}
 
 }

@@ -1,5 +1,7 @@
 package com.churradega.calculator.service.web.controller;
 
+import java.time.LocalDate;
+
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,6 +19,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.churradega.calculator.domain.Usuario;
 import com.churradega.calculator.service.UsuarioService;
+import com.churradega.calculator.utils.Validations;
 
 
 @Controller
@@ -53,8 +56,37 @@ public class UsuarioController {
 	@RequestMapping("/salva")
 	public String salvar(@ModelAttribute Usuario usuario, RedirectAttributes attr ) {
 		
+		LocalDate dataAtual = LocalDate.now();
+		LocalDate dataSistema = usuario.getDataCadastro();
+		
+		if (!(dataSistema.equals(dataAtual))) {
+			attr.addFlashAttribute("mensagemErro", "ERRO GRAVE: A data de cadastro não pode ser diferente da data atual");
+			return "redirect:/admin/usuarios/cadastrar";
+		}
+
+		if (!(Validations.ValidaSenha(usuario.getSenha(), usuario.getSenhaValidacao()))) {
+			attr.addFlashAttribute("mensagemErro", "ERRO GRAVE: Senhas Não Confere");
+			return "redirect:/admin/usuarios/cadastrar";
+		}
+		
+        
+		
+		if (!(usuario.getPerfil().equals("ROLE_ADMIN") || usuario.getPerfil().equals("ROLE_USER"))) {
+			attr.addFlashAttribute("mensagemErro", "ERRO GRAVE: Perfil deve ser preenchido");
+			return "redirect:/admin/usuarios/cadastrar";
+		}
+		
+		
+		
 		Long valor = usuario.getId();
 		if (valor == null) {
+			String usuarioCadastro = usuario.getLogin();
+			
+			if  (!(usuarioService.findByLogin(usuarioCadastro).isEmpty())) {
+				attr.addFlashAttribute("mensagemErro", "ERRO GRAVE: LOGIN já cadastro");
+				return "redirect:/admin/usuarios/cadastrar";
+			}
+			
 			usuarioService.save(usuario);
 			attr.addFlashAttribute("mensagemSucesso", "Usuario adicionado com sucesso");	
 		} else {

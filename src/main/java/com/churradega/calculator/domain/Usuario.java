@@ -20,7 +20,7 @@ public class Usuario extends AbstractEntity<Long>{
 	@Column(nullable = false, length = 100)
 	private String nome;
 	
-	@Column(nullable = false, length = 100)
+	@Column(nullable = false, length = 100, unique = true)
 	private String login;
 	
 	@Column(nullable = false, length = 100)
