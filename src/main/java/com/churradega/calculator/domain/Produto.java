@@ -28,8 +28,8 @@ public class Produto extends AbstractEntity<Long>{
 	private String categoria;
 	
 	
-	@Lob
-	@Column(columnDefinition="BLOB")
+
+	@Column
 	private byte[] imagemProduto;
 	
 	@Transient //esse campo não será persistido no hibernate
