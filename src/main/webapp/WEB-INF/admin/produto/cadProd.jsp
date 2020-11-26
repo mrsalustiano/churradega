@@ -133,7 +133,7 @@ h5 {
 									class="form-control" id="descricao"/>
 							</div>
 							<div class="form-group col-md-2">
-								<label for="valor">Valor</label> <form:input type="number" path="valor"
+								<label for="valor">Valor</label> <form:input type="number" path="valor" min="0" step="0.01" 
 									 class="form-control" id="valor"/>
 							</div>
 						</div>
@@ -187,7 +187,7 @@ h5 {
 <footer class="footer">
 	<div class="container">
 		<span class="text-muted">Churradega - 2020 - Desenvolvido por:
-			<strong>Marcelo / Alana / Rodrigo</strong>
+			Marcelo / Alana / Rodrigo
 		</span>
 	</div>
 </footer>

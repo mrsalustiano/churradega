@@ -177,7 +177,7 @@ label {
 <footer class="footer">
 	<div class="container">
 		<span class="text-muted">Churradega - 2020 - Desenvolvido por:
-			<strong>Marcelo / Alana / Rodrigo</strong>
+			Marcelo / Alana / Rodrigo
 		</span>
 	</div>
 </footer>

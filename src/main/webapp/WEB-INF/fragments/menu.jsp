@@ -26,14 +26,15 @@
 					href="${calculo}"><i class="fas fa-calculator"></i>&nbsp;Cálculo</a>
 				</li>
 			</ul>
+			<!--
 			<i class="fas fa-user-edit"></i>
-			<span>
+			 <span>
 			<a class="nav-link" href="#">Editar seus dados</a>
-			</span>
+			</span>  
 			<i class="fa fa-sign-out" aria-hidden="true"></i> <span>
 			<a class="nav-link" href="#"> Sair</a>
 			</span>
-			
+			-->
 			<i class="fas fa-user-shield"></i> <span class="navbar-text">
 				<a class="nav-link" href="/admin"> Área Adminstrativa </a>
 			</span>

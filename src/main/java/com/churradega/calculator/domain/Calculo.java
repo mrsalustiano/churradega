@@ -4,15 +4,14 @@ import java.time.LocalDate;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.Table;
 
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.format.annotation.DateTimeFormat.ISO;
 
+
 @SuppressWarnings("serial")
 @Entity
-@Table(name = "calculo")
-public class Calculo extends AbstractEntity<Long> {
+public class Calculo extends AbstractEntity<Long>  {
 	
 	@Column(nullable = false, columnDefinition = "DATE")
 	@DateTimeFormat(iso = ISO.DATE, pattern = "")

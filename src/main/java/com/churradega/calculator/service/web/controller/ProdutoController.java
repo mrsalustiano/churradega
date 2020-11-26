@@ -57,6 +57,36 @@ public class ProdutoController {
 			@RequestParam(required=false, value="imagem") MultipartFile imagem,
 			RedirectAttributes attr) {
 		
+		if (produto.getNome().isEmpty()) {
+			attr.addFlashAttribute("mensagemErro", "ERRO GRAVE: O nome não pode ser em branco");
+			return "redirect:/admin/produtos/cadastrar";
+		}
+		
+
+		if (produto.getCategoria().equals("none")) {
+			attr.addFlashAttribute("mensagemErro", "ERRO GRAVE: A categoria não pode ser em branco");
+			return "redirect:/admin/produtos/cadastrar";
+		}
+		
+		
+
+		if (produto.getDescricao().isEmpty()) {
+			attr.addFlashAttribute("mensagemErro", "ERRO GRAVE: A Descrição nome não pode ser em branco");
+			return "redirect:/admin/produtos/cadastrar";
+		}
+		
+		
+
+		if (produto.getValor().doubleValue() == 0) {
+			attr.addFlashAttribute("mensagemErro", "ERRO GRAVE: O Valor não pode ser Zero");
+			return "redirect:/admin/produtos/cadastrar";
+		}
+		
+		
+		
+		
+		
+		
 		byte[] bImagem;
 		
 		try {

@@ -12,7 +12,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Churradega - Calculadora de Churrasco</title>
-<spring:url value="/calculo/calcular" var="calcular"></spring:url>
+<spring:url value="/calculo/salva" var="salva"></spring:url>
 
 <link href='<spring:url value="https://use.fontawesome.com/releases/v5.7.0/css/all.css" />' rel="stylesheet" />
 <link href='<spring:url value="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"/>' rel="stylesheet" />
@@ -39,7 +39,8 @@
     <main>
            <div class="container">
             <h2>Coloque abaixo as quantidades de pessoas</h2>
-           <form:form action="${calcular}" method="POST" modelAttribute="calculoDTO">
+					<form:form action="${salva}" method="POST" modelAttribute="calculo"  cssClass="mb-2">
+					<form:hidden path="id" />
                 <div class="card-deck">
                     <div class="card" style="width: 14rem;">
                         <img src="images/avt-homem.jpg" class="card-img-top" alt="homens">
@@ -48,7 +49,7 @@
                             <p class="card-text">
                                 <div class="form-group">
                                     <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" id="glutaoHomemCheck">
+                                        <form:checkbox class="form-check-input" path="homemGlutao" id="glutaoHomemCheck"/>
                                         <label class="form-check-label" for="glutaoHomemCheck">
                                         Glutão ? 
                                       </label>
@@ -60,7 +61,7 @@
                                 <div class="form-group row">
                                     <label for="inputHomem" class="col-sm-6 col-form-label"><strong> Quantidade</strong></label>
                                     <div class="col-sm-6">
-                                        <input type="number" min="0" max="99" class="form-control" id="inputHomem">
+                                        <form:input type="number" path="qtdHomem" min="0" max="99" class="form-control" id="inputHomem" />
                                     </div>
                                 </div>
                             </p>
@@ -73,7 +74,7 @@
                             <p class="card-text">
                                 <div class="form-group">
                                     <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" id="glutaoMulherCheck">
+                                        <form:checkbox var="mulherGlutao" class="form-check-input" path="mulherGlutao" id="glutaoMulherCheck" />
                                         <label class="form-check-label" for="glutaoMulherCheck">
                                         Glutão ? 
                                       </label>
@@ -86,7 +87,7 @@
                                 <div class="form-group row">
                                     <label for="inputMulher" class="col-sm-6 col-form-label"><strong> Quantidade</strong></label>
                                     <div class="col-sm-6">
-                                        <input type="number" min="0" max="99" class="form-control" id="inputMulher">
+                                        <form:input type="number" min="0" max="99" class="form-control" id="inputMulher" path="qtdMulheres" />
                                     </div>
                                 </div>
                             </p>
@@ -101,7 +102,7 @@
                                 <div class="form-group row">
                                     <label for="inputCrianca" class="col-sm-6 col-form-label"><strong> Quantidade</strong></label>
                                     <div class="col-sm-6">
-                                        <input type="number" min="0" max="99" class="form-control" id="inputCrianca">
+                                        <form:input type="number" min="0" max="99" class="form-control" path="qtdCrianca" id="inputCrianca" />
                                     </div>
                                 </div>
                             </p>

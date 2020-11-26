@@ -133,13 +133,13 @@ label {
 		</div>
 
 	</main>
-	<footer class="footer">
-		<div class="container">
-			<span class="text-muted">Churradega - 2020 - Desenvolvido por:
-				<strong>Marcelo / Alana / Rodrigo</strong>
-			</span>
-		</div>
-	</footer>
+<footer class="footer">
+	<div class="container">
+		<span class="text-muted">Churradega - 2020 - Desenvolvido por:
+			Marcelo / Alana / Rodrigo
+		</span>
+	</div>
+</footer>
 	<script type="text/javascript"
 		src='<spring:url value="https://code.jquery.com/jquery-3.5.1.slim.min.js" />'></script>
 	<script type="text/javascript"
