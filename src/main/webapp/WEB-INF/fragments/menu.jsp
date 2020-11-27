@@ -6,6 +6,8 @@
 <spring:url value="/" var="home"></spring:url>
 <spring:url value="/clientes/cadastrar" var="cadastro"></spring:url>
 <spring:url value="/calculo" var="calculo"></spring:url>
+<spring:url value="/calculo/listar" var="listar"></spring:url>
+
 <!DOCTYPE html>
 <body>
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -22,9 +24,16 @@
 				</li>
 				<li class="nav-item active"><a class="nav-link"
 					href="${cadastro }"><i class="fas fa-user-cog"></i> Cadastro</a></li>
-				<li class="nav-item active"><a class="nav-link"
-					href="${calculo}"><i class="fas fa-calculator"></i>&nbsp;Cálculo</a>
-				</li>
+					
+				<li class="nav-item dropdown">
+                
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Calculo</a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="${calculo}">Calcular</a>
+                            <a class="dropdown-item" href="${listar }">Listar Calculos</a>
+                        </div>
+                    </li>	
+				
 			</ul>
 			<!--
 			<i class="fas fa-user-edit"></i>

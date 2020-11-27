@@ -5,6 +5,7 @@ import java.time.LocalDate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -15,7 +16,6 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import com.churradega.calculator.domain.Calculo;
 import com.churradega.calculator.domain.Cliente;
 import com.churradega.calculator.service.CalculoService;
-import com.churradega.calculator.utils.Validations;
 
 @Controller
 @RequestMapping("/calculo")
@@ -28,7 +28,7 @@ public class CalculoController {
 	public String cadastrarL(Calculo Calculo, ModelMap model) {
 		model.addAttribute("Calculos", service.findAll());
 
-		return "calculo";
+		return "calculo/calculo";
 	}
 	
 
@@ -36,15 +36,15 @@ public class CalculoController {
 	public String cadastrar(Calculo Calculo, ModelMap model) {
 		model.addAttribute("Calculos", service.findAll());
 
-		return "calculo";
+		return "calculo/calculo";
 	}
 
 	
 	@GetMapping("/listar")
 	public String listar(ModelMap model) {
-		model.addAttribute("Calculos", service.findAll());
+		model.addAttribute("calculos", service.findAll());
 
-		return "listarCalculo";
+		return "calculo/listarCalculo";
 	}
 
 	
@@ -52,6 +52,8 @@ public class CalculoController {
 	@RequestMapping("/salva")
 	public String salvar(@ModelAttribute Calculo calculos, RedirectAttributes attr) {
 
+
+		
 		Double carnes = 0.0;
 		Double bebidas = 0.0;
 		Double refrigerantes = 0.0;
@@ -98,7 +100,7 @@ public class CalculoController {
 			attr.addFlashAttribute("mensagemSucesso", "calculos editado com sucesso");
 		}
 
-		return "redirect:/calculo/cadastrar";
+		return "redirect:/calculo/listar";
 	}
 	
 	@GetMapping("/deleta/{id}")
@@ -106,8 +108,24 @@ public class CalculoController {
 	public String deleta(@PathVariable(name = "id") Long id, RedirectAttributes attr) {
 
 		service.delete(id);
-		attr.addFlashAttribute("mensagemSucesso", "Cliente removido com sucesso");
-		return "redirect:/clientes/listar";
+		attr.addFlashAttribute("mensagemSucesso", "Calculo removido com sucesso");
+		return "redirect:/calculo/listar";
+
+	}
+	
+	@GetMapping("/detalha/{id}")
+	public String carregaAlterar(@PathVariable(name = "id") Long id, Model model, RedirectAttributes attr) {
+		try {
+
+			Calculo calculo = service.findById(id);
+			model.addAttribute("calculos", service.findAll());
+			model.addAttribute("calculo", calculo);
+
+		} catch (Exception e) {
+			attr.addFlashAttribute("mensagemErro", "ERRO GRAVE: " + e.getMessage());
+
+		}
+		return "calculo/detalhes";
 
 	}
 	

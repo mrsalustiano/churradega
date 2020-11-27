@@ -111,6 +111,9 @@ h2 {
 				<button type="submit" class="btn btn-primary">Cadastrar</button>
 				&nbsp;&nbsp;
 				<button type="reset" class="btn btn-danger">Cancelar</button>
+				&nbsp;&nbsp;
+				<button class="btn btn-success" type="button"
+					onclick="javascript:history.back()">Voltar</button>
 			</div>
 		</form:form>
 	</div>
